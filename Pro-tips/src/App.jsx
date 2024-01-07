@@ -1,27 +1,19 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react'
 import Navbar from './components/Navbar'
-import Contact from './components/Contact'
-import Form from './components/Form'
 import Home from './components/Home'
+import About from './components/Registration'
+import Contact from './components/Contact'
+import { Route, Routes } from 'react-router-dom'
+import PageNotFound from './components/PageNotFound'
+import AllRoutes from './components/Routes/AllRoutes'
 
-
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
+    <div>
       <Navbar />
-      <div style={{textAlign:"center"}}>
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/contact' element={<Contact />}></Route>
-        <Route path='/form' element={<Form />}></Route>
-      </Routes>
-
-      </div>
-    
-    </>
+      {/* Perform Routing */}
+      <AllRoutes />
+    </div>
   )
 }
 
